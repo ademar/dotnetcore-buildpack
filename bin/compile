@@ -55,5 +55,5 @@ echo "publish ${PROJECT_FILE}"
 dotnet publish $PROJECT_FILE --output ${BUILD_DIR}/heroku_output --configuration Release --runtime linux-x64
 
 cat << EOT >> ${BUILD_DIR}/Procfile
-web: cd \$HOME/heroku_output && ls -al && dotnet App/bin/Release/netcoreapp2.0/linux-x64/App.dll
+web: cd \$HOME/heroku_output && dotnet App.dll
 EOT
